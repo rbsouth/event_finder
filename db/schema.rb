@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_03_08_183116) do
+ActiveRecord::Schema.define(version: 2018_03_08_185340) do
 
   create_table "businesses", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -29,6 +29,34 @@ ActiveRecord::Schema.define(version: 2018_03_08_183116) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_businesses_on_email", unique: true
     t.index ["reset_password_token"], name: "index_businesses_on_reset_password_token", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "business_id"
+    t.string "title"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.datetime "start"
+    t.string "description"
+    t.string "code"
+    t.string "buy_link"
+    t.string "business_page_link"
+    t.boolean "canceled"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["business_id"], name: "index_events_on_business_id"
+  end
+
+  create_table "user_events", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "event_id"
+    t.boolean "going", default: false
+    t.boolean "saved", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_user_events_on_event_id"
+    t.index ["user_id"], name: "index_user_events_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
