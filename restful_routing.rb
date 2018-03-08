@@ -12,6 +12,25 @@
               business_index GET    /business/index(.:format)                                                         business#index
                   users_show GET    /users/show(.:format)                                                             users#show
                  users_index GET    /users/index(.:format)                                                            users#index
+                       users GET    /users(.:format)                                                                  users#index
+                        user GET    /users/:id(.:format)                                                              users#show
+                  businesses GET    /businesses(.:format)                                                             businesses#show
+                      events GET    /events(.:format)                                                                 events#index
+                             POST   /events(.:format)                                                                 events#create
+                   new_event GET    /events/new(.:format)                                                             events#new
+                  edit_event GET    /events/:id/edit(.:format)                                                        events#edit
+                       event GET    /events/:id(.:format)                                                             events#show
+                             PATCH  /events/:id(.:format)                                                             events#update
+                             PUT    /events/:id(.:format)                                                             events#update
+                             DELETE /events/:id(.:format)                                                             events#destroy
+                 user_events GET    /user_events(.:format)                                                            user_events#index
+                             POST   /user_events(.:format)                                                            user_events#create
+              new_user_event GET    /user_events/new(.:format)                                                        user_events#new
+             edit_user_event GET    /user_events/:id/edit(.:format)                                                   user_events#edit
+                  user_event GET    /user_events/:id(.:format)                                                        user_events#show
+                             PATCH  /user_events/:id(.:format)                                                        user_events#update
+                             PUT    /user_events/:id(.:format)                                                        user_events#update
+                             DELETE /user_events/:id(.:format)                                                        user_events#destroy
         new_business_session GET    /businesses/sign_in(.:format)                                                     devise/sessions#new
             business_session POST   /businesses/sign_in(.:format)                                                     devise/sessions#create
     destroy_business_session DELETE /businesses/sign_out(.:format)                                                    devise/sessions#destroy
