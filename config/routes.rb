@@ -12,8 +12,13 @@ Rails.application.routes.draw do
   get 'business/index'
   get 'users/show'
   get 'users/index'
+  resources :users, only: [:index, :show]
+  resource :businesses, only: [:index, :show]
+  resources :events
+  resources :user_events
   devise_for :businesses
   devise_for :users
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'user#index'
+  root 'users#index'
 end
