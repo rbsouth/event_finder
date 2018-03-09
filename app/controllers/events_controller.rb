@@ -1,5 +1,8 @@
 class EventsController < ApplicationController
   def index
+    @user = User.new
+    @business = Business.new
+    # render 'devise/session/new'
   end
 
   def new
