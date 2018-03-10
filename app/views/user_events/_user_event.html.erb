@@ -1,0 +1,12 @@
+<div class="info">
+	<% if local_assigns[:saved] %>
+	<!-- if instance on event show page didnt exist, image tag attributes are set manually through render -->
+		<%= image_tag asset_path("star.png"), data: {saved: saved, eventid: event_id}, class: 'save-event-button' %>
+	<% else %>
+		<% if user_event.saved %>
+			<%= image_tag asset_path('star-filled.png'), data: {saved: user_event.saved, eventid: user_event.event.id}, class: 'save-event-button' %>
+		<% else %>
+			<%= image_tag asset_path('star.png'), data: {saved: user_event.saved, eventid: user_event.event.id}, class: 'save-event-button' %>
+		<% end %>
+	<% end %>
+</div>
