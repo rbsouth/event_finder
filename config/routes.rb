@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post '/user-event-interaction', to: 'user_events#save_change'
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'

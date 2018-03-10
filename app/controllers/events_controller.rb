@@ -17,15 +17,21 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @user_event = @event.user_event(current_user) # to show partial
   end
 
   def edit
+    @event = current_business.events.find(params[:id])
   end
 
   def update
+    @event = current_business.events.find(params[:id])
+    @event.update_attributes(event_params)
+    redirect_to events_path
   end
 
   def destroy
+    current_business.events.find(params[:id]).destroy
   end
 
   private
