@@ -15,5 +15,8 @@ $(document).on 'turbolinks:load' , ->
 				$(_this).attr('src', object.saved_img)
 			else
 				$(_this).attr('src', object.img)
+
+	# $(document).on 'click', '.buy-link', ->
+		
 			
 

@@ -44,7 +44,8 @@
 			<%= render 'user_events/user_event', locals: {saved: false, event_id: @event.id} %>
 		<% end %>
 		<p> <%= @event.code %> HF57KH1 </p>
-		<p> <%= @event.buy_link %> </p>
+		 <%= link_to "Use Code Here", @event.buy_link, class: 'buy-link' %>
+		 <%= link_to "Organizer Page", some_path %>
 		<p> <%= @event.business_page_link %> </p>
 	</div>
 </div>
