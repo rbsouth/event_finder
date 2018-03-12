@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+         
+  def saved_events
+  	Event.joins(:user_events).merge(user_events.where(saved: true))
+  end
 end
