@@ -27,7 +27,7 @@ class UserEventsController < ApplicationController
   		format.json {render json: {user_event: @user_event, img: @img, saved_img: @saved_img}}
   	end
   end
-
+  
   private
 
   def user_event_params

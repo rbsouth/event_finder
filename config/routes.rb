@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   post '/user-event-interaction', to: 'user_events#save_change'
+  get '/user-going', to: 'events#going_true'
+
   devise_for :users, controllers: {
     sessions: 'users/sessions',
     registrations: 'users/registrations'
@@ -9,7 +11,7 @@ Rails.application.routes.draw do
     registrations: 'businesses/registrations'
   }
   resources :users, only: [:index, :show]
-  resource :businesses, only: [:index, :show]
+  resources :businesses, only: [:index, :show]
   resources :events
   resources :user_events
 
