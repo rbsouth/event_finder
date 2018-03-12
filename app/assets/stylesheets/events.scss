@@ -17,10 +17,22 @@
 	}
 }
 
-.info-row{
-  margin: 50px 0px;
+@media all and (min-width: 580px){
+	.info-row{
+	  margin: 50px 0px;
+	}
+
+	.col-border{
+		border-right: 1px #b3b3b3 solid
+	}
 }
 
-.col-border{
-	border-right: 1px #b3b3b3 solid
+@media all and (max-width: 579px){
+	.info-row{
+	  margin: 25px 0px;
+	}
+}
+
+.info{
+	margin: 10px;
 }
