@@ -48,6 +48,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:business_id, :title, :address, :city, :state, :description, :code, :buy_link, :business_page_link, :canceled )
+    params.require(:event).permit(:business_id, :title, :address, :city, :state, :description, :code, :buy_link, :business_page_link, :canceled, images:[])
   end
 end
