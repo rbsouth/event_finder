@@ -25,12 +25,18 @@
 	    <span class="sr-only">Next</span>
 	  </a>
 	</div>
+	<% if @user_event %>
+	<!-- instance from events controller show action -->
+		<%= render @user_event %>
+	<% else %>
+		<%= render 'user_events/user_event', locals: {saved: false, event_id: @event.id} %>
+	<% end %>
 	
-	<div class="row">
-		<div class="col-sm-6 col-12">
+	<div class="row info-row">
+		<div class="col-sm-6 col-12 col-border">
 			<p> <%= @event.description %> </p>
 		</div>
-		<div class="col-sm-3 col-12 order-sm-first">
+		<div class="col-sm-3 col-12 order-sm-first col-border">
 			<p> <%= @event.title %> </p>
 			<p> <%= @event.address %> </p>
 			<p> <%= @event.city %> </p>
@@ -38,12 +44,6 @@
 			<p> <%= @event.start %> </p>
 		</div>
 		<div class="col-sm-3 col-12">
-			<% if @user_event %>
-			<!-- instance from events controller show action -->
-				<%= render @user_event %>
-			<% else %>
-				<%= render 'user_events/user_event', locals: {saved: false, event_id: @event.id} %>
-			<% end %>
 			<p> <%= @event.code %> HF57KH1 </p>
 			 <p> <%= link_to "Use Code Here", user_going_path(event_id: @event.id), class: 'buy-link' %> </p>
 			 <p> <%= link_to "Organizer Page", @event.business_page_link %> </p>
