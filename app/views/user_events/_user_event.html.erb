@@ -1,7 +1,7 @@
 <div class="info">
-	<% if local_assigns[:saved] %>
+	<% if !local_assigns[:locals].nil? %>
 	<!-- if instance on event show page didnt exist, image tag attributes are set manually through render -->
-		<%= image_tag asset_path("star.png"), data: {saved: saved, eventid: event_id}, class: 'save-event-button' %>
+		<%= image_tag asset_path("star.png"), data: {saved: locals[:saved], eventid: locals[:event_id]}, class: 'save-event-button' %>
 	<% else %>
 		<% if user_event.saved %>
 			<%= image_tag asset_path('star-filled.png'), data: {saved: user_event.saved, eventid: user_event.event.id}, class: 'save-event-button' %>
@@ -9,6 +9,5 @@
 			<%= image_tag asset_path('star.png'), data: {saved: user_event.saved, eventid: user_event.event.id}, class: 'save-event-button' %>
 		<% end %>
 	<% end %>
-	
 	<strong>Going:</strong> <%= @event.user_events.going_count %>
 </div>
