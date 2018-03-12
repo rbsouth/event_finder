@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   post '/user-event-interaction', to: 'user_events#save_change'
-  post '/user-going', to: 'user_events#going_true'
+  get '/user-going', to: 'events#going_true'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',

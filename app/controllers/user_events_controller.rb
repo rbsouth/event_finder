@@ -27,16 +27,7 @@ class UserEventsController < ApplicationController
   		format.json {render json: {user_event: @user_event, img: @img, saved_img: @saved_img}}
   	end
   end
-
-  def going_true
-  	@user_event = UserEvent.find_by(user: current_user, event_id: params[:event_id])
-  	if !@user_event.present?
-  		@user_event = UserEvent.create(user: current_user, event_id: params[:event_id], going: true)
-  	else
-  		@user_event.update_attributes(going: true)
-  	end
-  end
-
+  
   private
 
   def user_event_params
