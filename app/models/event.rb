@@ -8,7 +8,7 @@ class Event < ApplicationRecord
 	validates :address, presence: true, length: {minimum: 6}
 	validates :city, presence: true
 	validates :state, presence: true, length: {minimum: 2}
-	validates :start, presence: true, date: true
+	validates :start, presence: true
 
   # will either return this event's user_event or will return nil
   def user_event(current_user)
