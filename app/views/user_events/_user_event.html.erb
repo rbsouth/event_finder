@@ -9,5 +9,7 @@
 			<%= image_tag asset_path('star.png'), data: {saved: user_event.saved, eventid: user_event.event.id}, class: 'save-event-button' %>
 		<% end %>
 	<% end %>
-	<strong>Going:</strong> <%= @event.user_events.going_count %>
+	<div class="going-wrapper">
+		<strong> <%= @event.user_events.going_count %> Going</strong>
+	</div>
 </div>
