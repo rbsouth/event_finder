@@ -1,30 +1,35 @@
-<div class="row justify-content-center">
-  <div class="col-8">
-    <h2>Log in</h2>
-
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {"parsley-validate": ''}) do |f| %>
-      <div class='form-group'>
-        <%= f.label :email %><br />
-        <%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", class: 'form-control' %>
-      </div>
-
-      <div class='form-group'>
-        <%= f.label :password %><br />
-        <%= f.password_field :password, required: true, autocomplete: "off", class: 'form-control' %>
-      </div>
-
-      <% if devise_mapping.rememberable? -%>
+<div>
+  <img src="https://static1.squarespace.com/static/5407e62ce4b00b0594c2e6ed/580d23243e00be882559c9f3/58f789d19f745624cf71b549/1493744967011/powder+paint+war.jpeg?format=1500w" class="eventbackground" alt="">
+</div>
+<div class="container signincontainerstyling">
+  <div class="row justify-content-center">
+    <div class="col-8 editpadding">
+      <h2>Log in</h2>
+  
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {"parsley-validate": ''}) do |f| %>
         <div class='form-group'>
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
+          <%= f.label :email %><br />
+          <%= f.email_field :email, required: true, autofocus: true, autocomplete: "email", class: 'form-control' %>
+        </div>
+  
+        <div class='form-group'>
+          <%= f.label :password %><br />
+          <%= f.password_field :password, required: true, autocomplete: "off", class: 'form-control' %>
+        </div>
+  
+        <% if devise_mapping.rememberable? -%>
+          <div class='form-group'>
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+  
+        <div class="actions">
+          <%= f.submit "Log in", class: 'btn btn-outline-light' %>
+          <%= render "devise/shared/links" %>
         </div>
       <% end %>
-
-      <div class="actions">
-        <%= f.submit "Log in", class: 'btn btn-outline-light' %>
-        <%= render "devise/shared/links" %>
-      </div>
-    <% end %>
-
+  
+    </div>
   </div>
 </div>
