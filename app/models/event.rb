@@ -12,4 +12,8 @@ class Event < ApplicationRecord
   def user_event(current_user)
   	UserEvent.find_by(user: current_user, event_id: id)
   end
+
+  def going_count
+    user_events.where(going: true).count
+  end
 end
