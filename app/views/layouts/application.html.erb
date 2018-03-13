@@ -31,7 +31,7 @@
           <li class="ml-auto p-2 nav-item dropdown">
             <%= link_to current_business.company_name, '#', class: 'nav-link dropdown-toggle themecolor', role: 'button', data: {toggle: 'dropdown'} %>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "Settings", edit_user_registration_path(current_user), class: 'dropdown-item' %>
+              <%= link_to "Settings", edit_business_registration_path(current_business), class: 'dropdown-item' %>
               <div class="dropdown-divider"></div>
               <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
             </div>
