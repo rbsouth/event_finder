@@ -1,2 +1,51 @@
-<h1>Events#edit</h1>
-<p>Find me in app/views/events/edit.html.erb</p>
+<div class="row justify-content-center">
+  <div class="col-8">
+		<% if !@event.canceled %>
+	  	<h5>To avoid confusion among users, edit only if necessary</h5>
+	  	<%= form_with model: @event,  data: {"parsley-validate": ''}, local: true do |f| %>
+
+				<div class="form-group">
+					<%= f.text_field :title, required: true, placeholder: 'Event Title', class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+					<%= f.text_field :address, required: true, placeholder: 'Address', class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+					<%= f.text_field :city, required: true, placeholder: 'City', class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+					<%= f.text_field :state, required: true, placeholder: 'State', class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+					<%= f.date_field :start, required: true, placeholder: 'When is this taking place?', class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+					<%= f.text_area :description, required: true, minlength: 50, placeholder: 'Description of the event (at least 50 characters)', class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+					<%= f.text_field :buy_link, required: true, placeholder: 'A link to the discounted purchase page', class: 'form-control' %>
+				</div>
+
+				<div class="form-group">
+					<%= f.text_field :business_page_link, required: true, placeholder: 'A link to your business page', class: 'form-control' %>
+				</div>
+				
+				<div class="form-group">
+					<%= f.label :image %>
+					<%= f.file_field :images, class: 'form-control-file', multiple: true %>
+				</div>
+
+				<%= f.submit class: 'btn btn-success' %>
+				<%= link_to "Cancel Event", cancel_event_path(id: @event.id) %>
+			<% end %>
+		<% else %>
+			<h2>Your event, "<%= @event.title %>" has been canceled, click <%= link_to "Here", new_event_path %> to create a new event.</h2>
+		<% end %>
+	</div>
+</div>
