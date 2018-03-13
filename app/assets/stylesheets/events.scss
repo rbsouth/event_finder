@@ -3,18 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+body {
+	background: #424242;
+	color: white;
+}
 
 @media all and (min-width: 1099px){
+	body {
+		background: white;
+	}
+
 	.event-wrapper{
-		max-width: 1080px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 50px;
-		margin-bottom: 50px;
-		border: #b5b5b5 solid 1px;
-		border-radius: 5px;
-		padding: 3px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: #b5b5b5 solid 1px;
+    border-radius: 5px;
+    padding: 3px;
     box-shadow: 0px 0px 8px 0px #888;
+    background: #424242;
 	}
 }
 
@@ -76,6 +85,7 @@
 	text-align: right;
   position: relative;
   top: -33px;
+  margin-left: 30px;
 }
 
 .sign-up-nav {
@@ -85,4 +95,17 @@
 
 #user-tab {
 	border-right: 1px #e0e0e0 solid;
+}
+
+.business-controls {
+	position: fixed;
+  bottom: 0px;
+  right: 0px;
+  background: #ffffff;
+  border: 1px #e0e0e0 solid;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 45px;
+  height: 50px;
+  width: 150px;
 }

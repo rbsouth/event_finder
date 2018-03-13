@@ -1,3 +1,6 @@
+<% if !@event.canceled %>
+	
+
 <div class="event-wrapper">
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 	  <ol class="carousel-indicators">
@@ -50,3 +53,11 @@
 		</div>
 	</div>
 </div>
+	<% if @event.business == current_business %>
+		<div class="business-controls">
+			<%= link_to "Edit or Cancel Event", edit_event_path %>
+		</div>
+	<% end %>
+<% else %>
+	<h2>This event has been cancelled. Click <%= link_to "Here", events_path %> to see more.</h2>
+<% end %>

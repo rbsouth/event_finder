@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  def index
+  def index 
     @user = User.new
     @business = Business.new
     # render 'devise/session/new'
@@ -43,6 +43,12 @@ class EventsController < ApplicationController
       @user_event.update_attributes(going: true)
     end
     redirect_to events_path
+  end
+
+  def cancel_event
+    @event = Event.find_by(business: current_business, id: params[:id])
+    @event.update_attributes(canceled: true)
+    redirect_to @event
   end
 
   private
