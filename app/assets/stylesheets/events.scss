@@ -3,27 +3,45 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-body {
-	background: #424242;
+.event-wrapper {
 	color: white;
 }
 
-@media all and (min-width: 1099px){
-	body {
-		background: white;
-	}
+.event-show-background {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -5;
+	background: white;
+}
 
+.event-page-image {
+	width: 100%;
+}
+
+@media all and (min-width: 1099px){
 	.event-wrapper{
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    border: #b5b5b5 solid 1px;
+    border: #424242 solid 1px;
     border-radius: 5px;
     padding: 3px;
-    box-shadow: 0px 0px 8px 0px #888;
+    box-shadow: 0px 0px 16px 0px #000;
     background: #424242;
+	}
+
+	.event-show-backdrop {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		z-index: -5;
+		background: #e96443;  /* fallback for old browsers */
+		background: -webkit-linear-gradient(to top, #904e95, #e96443);  /* Chrome 10-25, Safari 5.1-6 */
+		background: linear-gradient(to top, #904e95, #e96443); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 	}
 }
 
