@@ -1,11 +1,38 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+ @import "material";
+ @import "material_icons";
+ @import 'parsley';
+ @import "font-awesome";
+ @import 'user_events';
 
-.info{
-	position: relative;
-  height: 0px;
-  bottom: 257px;
+.navbar {
+	height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.eve-nav {
+	height: 25px;
+  position: relative;
+  top: -4px;
+}
+
+html body {
+	background: #424242;
+}
+
+label.whiteletters {
+	color: white;
+}
+
+input.whitestuff {
+	color: white;
+	border-color: white !important; 
+}
+
+.card-text {
+	    height: 80px;
+    overflow: hidden;
 }
 
 .event-wrapper {

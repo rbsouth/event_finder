@@ -11,6 +11,12 @@
 	float: right;
 }
 
+.info{
+	position: relative;
+  height: 0px;
+  bottom: 257px;
+}
+
 .editcontainerstyling {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -20,7 +26,7 @@
 	background: -webkit-linear-gradient(to top, #f80759, #bc4e9c);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to top, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
-}
+} 
 
 .editpadding {
 	padding-top: 20px;
@@ -29,4 +35,57 @@
 
 .maxwidth {
 	max-width: 540px;
+}
+
+.logo-login {
+	transition: 2s;
+}
+
+@media all and (min-width: 1206px){
+	.logo-login {
+	  height: 160px;
+	  position: relative;
+	  bottom: 291px;
+	  left: 574px;
+	}
+	.obama-quote {
+	  height: 209px;
+	  position: relative;
+	  top: 291px;
+	  left: 576px;
+	}
+}
+
+@media all and (min-width: 610px) and (max-width: 1205px){
+	.logo-login {
+    height: 160px;
+    position: relative;
+    bottom: 400px;
+    left: -34px;
+	}
+	.obama-quote {
+		display: none
+	}
+
+}
+
+@media all and (max-width: 609px){
+	.logo-login {
+    height: 77px;
+    position: relative;
+    bottom: 400px;
+    left: 15px;
+	}
+	.obama-quote {
+		display: none
+	}
+
+}
+
+.event-show-background {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -5;
+	background: white;
 }

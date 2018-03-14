@@ -10,6 +10,13 @@ class Event < ApplicationRecord
 	validates :state, length: {minimum: 2}
 	validates :description, length: {minimum: 50}
   validates :images, length: {minimum: 3, maximum: 5}
+  validate :start_cannot_be_in_the_past
+
+   def start_cannot_be_in_the_past
+    if start.present? && start < Date.today
+      errors.add(:start, "can't be in the past")
+    end
+  end
   # will either return this event's user_event or will return nil
   def user_event(current_user)
   	UserEvent.find_by(user: current_user, event_id: id)

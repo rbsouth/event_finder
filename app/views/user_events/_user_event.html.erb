@@ -10,6 +10,10 @@
 		<% end %>
 	<% end %>
 	<div class="going-wrapper">
-		<strong> <%= @event.user_events.going_count %> Going</strong>
+		<% if @event %>
+			<strong> <%= @event.user_events.going_count %> Going</strong>
+		<% else %>
+			<strong> <%= event.user_events.going_count %> Going</strong>
+		<% end %>
 	</div>
 </div>

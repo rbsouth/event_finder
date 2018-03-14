@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  layout 'event_show', only: [:show]
+
   def index 
     @user = User.new
     @business = Business.new

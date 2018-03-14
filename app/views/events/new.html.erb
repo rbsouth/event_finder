@@ -16,11 +16,12 @@
 			</div>
 
 			<div class="form-group">
-				<%= f.text_field :state, required: true, placeholder: 'State', class: 'form-control' %>
+				<%= f.label :state %>
+				<%= select_tag :state, options_for_select(us_states), class: 'form-control' %>
 			</div>
 
 			<div class="form-group">
-				<%= f.date_field :start, required: true, placeholder: 'When is this taking place?', class: 'form-control' %>
+				<%= f.datetime_field :start, required: true, placeholder: 'When is this taking place?', class: 'form-control' %>
 			</div>
 
 			<div class="form-group">
