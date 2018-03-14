@@ -2,9 +2,26 @@
   <img src="https://static1.squarespace.com/static/5407e62ce4b00b0594c2e6ed/580d23243e00be882559c9f3/58f789d19f745624cf71b549/1493744967011/powder+paint+war.jpeg?format=1500w" class="eventbackground" alt="">
 </div>
 <% if user_signed_in? || business_signed_in? %>
+  <div class="container pillcontainerstyling">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Recent Events</a>
+      <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Popular Events</a>
+    </div>
+  </div>
   <div class="container eventcontainerstyling">
-    <div class="row justify-content-center editpadding">
-      <%= render @events.reverse %>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+        <div class="row justify-content-center editpadding">
+          <%= render @events.reverse %>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+        <div class="row justify-content-center editpadding">
+          <% sort_popular_events(@events).each do |event| %>
+            <%= render event %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 <% else %>
