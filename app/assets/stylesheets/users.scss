@@ -11,6 +11,12 @@
 	float: right;
 }
 
+.info{
+	position: relative;
+  height: 0px;
+  bottom: 257px;
+}
+
 .editcontainerstyling {
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -31,6 +37,9 @@
 	max-width: 540px;
 }
 
+.logo-login {
+	transition: 2s;
+}
 
 @media all and (min-width: 1206px){
 	.logo-login {
@@ -71,4 +80,12 @@
 		display: none
 	}
 
+}
+
+.event-show-background {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	z-index: -5;
+	background: white;
 }

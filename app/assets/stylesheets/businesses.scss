@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+.logo-login {
+	transition: 2s;
+}
 @media all and (min-width: 1206px){
 	.logo-login {
 	  height: 160px;
@@ -17,7 +19,6 @@
 	  left: 576px;
 	}
 }
-
 
 @media all and (min-width: 610px) and (max-width: 1205px){
 	.logo-login {

@@ -32,7 +32,8 @@
 			<p> <%= @event.address %> </p>
 			<p> <%= @event.city %> </p>
 			<p> <%= @event.state %> </p>
-			<p> <%= @event.start %> </p>
+			<p> <%= @event.start.strftime("%I:%M %P, %A") %> </p>
+			<p> <%= @event.start.strftime("%B %d %Y") %> </p>
 		</div>
 		<div class="col-sm-3 col-12">
 			<p> <%= @event.code %> HF57KH1 </p>
