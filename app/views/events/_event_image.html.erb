@@ -1,0 +1,32 @@
+<ol class="carousel-indicators">
+  <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+  <li data-target="#carouselIndicators" data-slide-to="1"></li>
+  <li data-target="#carouselIndicators" data-slide-to="2"></li>
+  <% if @event.images.count > 3 %>
+  	<li data-target="#carouselIndicators" data-slide-to="3"></li>
+  <% end %>
+  <% if @event.images.count > 4 %>
+  	<li data-target="#carouselIndicators" data-slide-to="4"></li>
+  <% end %>
+</ol>
+<div class="carousel-inner">
+  <div class="carousel-item active">
+    <%= image_tag @event.images[0], class: "event-page-image" %>
+  </div>
+  <div class="carousel-item">
+    <%= image_tag @event.images[1], class: "event-page-image" %>
+  </div>
+  <div class="carousel-item">
+    <%= image_tag @event.images[2], class: "event-page-image" %>
+  </div>
+	<% if @event.images.count > 3 %>
+    <div class="carousel-item">
+      <%= image_tag @event.images[3], class: "event-page-image" %>
+    </div>
+  <% end %>
+	<% if @event.images.count > 4 %>
+    <div class="carousel-item">
+      <%= image_tag @event.images[4], class: "event-page-image" %>
+    </div>
+  <% end %>
+</div>
