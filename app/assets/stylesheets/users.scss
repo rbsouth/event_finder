@@ -31,12 +31,19 @@
 	max-width: 540px;
 }
 
+
 @media all and (min-width: 1206px){
 	.logo-login {
 	  height: 160px;
 	  position: relative;
 	  bottom: 291px;
 	  left: 574px;
+	}
+	.obama-quote {
+	  height: 209px;
+	  position: relative;
+	  top: 291px;
+	  left: 576px;
 	}
 }
 
@@ -47,6 +54,10 @@
     bottom: 400px;
     left: -34px;
 	}
+	.obama-quote {
+		display: none
+	}
+
 }
 
 @media all and (max-width: 609px){
@@ -56,4 +67,8 @@
     bottom: 400px;
     left: 15px;
 	}
+	.obama-quote {
+		display: none
+	}
+
 }
