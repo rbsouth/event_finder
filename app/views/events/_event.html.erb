@@ -4,7 +4,10 @@
         <%= image_tag event.images[0], class: 'card-img-top cardimagesize' %>
     <% end %>
     <div class="card-body">
-      <%= render event.user_event(current_user), event: event %>
+      <% user_event = event.user_event(current_user) %>
+      <% if user_event %>
+        <%= render user_event, event: event %>
+      <% end %>
       <h5 class="card-title"><%= event.title %></h5>
       <p class="card-text"><%= event.description %></p>
       <ul>
