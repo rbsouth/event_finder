@@ -1,3 +1,31 @@
 // Place all the styles related to the businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@media all and (min-width: 1206px){
+	.logo-login {
+	  height: 160px;
+	  position: relative;
+	  bottom: 291px;
+	  left: 574px;
+	}
+}
+
+@media all and (min-width: 610px) and (max-width: 1205px){
+	.logo-login {
+    height: 160px;
+    position: relative;
+    bottom: 400px;
+    left: -34px;
+	}
+}
+
+@media all and (max-width: 609px){
+	.logo-login {
+    height: 77px;
+    position: relative;
+    bottom: 400px;
+    left: 15px;
+	}
+}
+

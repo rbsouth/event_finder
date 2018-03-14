@@ -10,12 +10,16 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <%= link_to "Home", root_path, class: 'navbar-brand themecolor' %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item themecolor active">
+          <%= link_to (image_tag 'eventure-mini.png', class: 'eve-nav'), root_path, class: 'nav-link' %>
+        </li>
       <% if business_signed_in? %>
-        <li>
-          <%= link_to "New Event", new_event_path, class: 'navbar-brand themecolor' %>
+        <li class="nav-item themecolor">
+          <%= link_to "New Event", new_event_path, class: 'nav-link' %>
         </li>
       <% end %>
+    </ul>
       <ul class="navbar-nav ml-auto">
         <% if user_signed_in? %>
           <li class="ml-auto p-2 nav-item dropdown">
@@ -46,10 +50,6 @@
         <% end %>
       </ul>
     </nav>
-    <% if notice || alert %>
-  	 <p class="notice"><%= notice %></p>
-     <p class="alert"><%= alert %></p>
-    <% end %>
     <%= yield %>
   </body>
 </html>

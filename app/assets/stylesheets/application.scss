@@ -20,20 +20,29 @@
  	@import 'user_events';
  	@import 'users';
 
- 	.signincontainerstyling {
- 		color: white;
-		margin: -150px 25px;
-		max-width: 540px;
-		position: relative;
-		border-radius: 7px;
-		background: #bc4e9c;  /* fallback for old browsers */
-		background: -webkit-linear-gradient(to top, #f80759, #bc4e9c);  /* Chrome 10-25, Safari 5.1-6 */
-		background: linear-gradient(to top, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-		box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+.signincontainerstyling {
+	color: white;
+	margin: -387px 25px;
+	max-width: 540px;
+	position: relative;
+	border-radius: 7px;
+	background: #bc4e9c;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to top, #f80759, #bc4e9c);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to top, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, .14), 0 6px 30px 5px rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
 }
 
 .navbar {
 	height: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.eve-nav {
+	height: 25px;
+  position: relative;
+  top: -4px;
 }
 
 html body {
@@ -47,4 +56,9 @@ label.whiteletters {
 input.whitestuff {
 	color: white;
 	border-color: white !important; 
+}
+
+.card-text {
+	    height: 80px;
+    overflow: hidden;
 }
